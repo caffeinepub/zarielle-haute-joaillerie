@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@200;300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Zarielle Luxury Design Tokens - Light Mode (Soft Ivory Base) */
+    --radius: 0;
+    
+    /* Soft Ivory Background - Light Mode */
+    --background: 0.975 0.01 60;
+    --foreground: 0.15 0.005 40;
+    
+    /* Elevated Cards - Subtle Cream */
+    --card: 0.99 0.008 55;
+    --card-foreground: 0.12 0.005 40;
+    
+    /* Popovers - Pure White */
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0.005 40;
+    
+    /* Primary - Deep Matte Black with warmth */
+    --primary: 0.12 0.008 30;
+    --primary-foreground: 0.975 0.01 60;
+    
+    /* Secondary - Metallic Champagne Gold */
+    --secondary: 0.78 0.095 75;
+    --secondary-foreground: 0.12 0.008 30;
+    
+    /* Muted - Warm Grey */
+    --muted: 0.92 0.008 50;
+    --muted-foreground: 0.48 0.01 40;
+    
+    /* Accent - Rich Gold */
+    --accent: 0.72 0.12 70;
+    --accent-foreground: 0.12 0.008 30;
+    
+    /* Destructive - Muted Deep Red */
+    --destructive: 0.48 0.15 25;
+    --destructive-foreground: 0.975 0.01 60;
+    
+    /* Borders - Soft Champagne */
+    --border: 0.88 0.02 65;
+    --input: 0.88 0.02 65;
+    --ring: 0.72 0.12 70;
+    
+    /* Charts - Luxury Palette */
+    --chart-1: 0.72 0.12 70;
+    --chart-2: 0.58 0.08 50;
+    --chart-3: 0.42 0.12 30;
+    --chart-4: 0.85 0.08 65;
+    --chart-5: 0.65 0.15 55;
+    
+    /* Sidebar - Light Cream */
+    --sidebar: 0.985 0.008 58;
+    --sidebar-foreground: 0.15 0.005 40;
+    --sidebar-primary: 0.72 0.12 70;
+    --sidebar-primary-foreground: 0.12 0.008 30;
+    --sidebar-accent: 0.92 0.012 60;
+    --sidebar-accent-foreground: 0.15 0.005 40;
+    --sidebar-border: 0.88 0.02 65;
+    --sidebar-ring: 0.72 0.12 70;
+  }
+
+  .dark {
+    /* Zarielle Luxury Design Tokens - Dark Mode (Deep Matte Black Base) */
+    
+    /* Deep Matte Black Background */
+    --background: 0.08 0.008 30;
+    --foreground: 0.95 0.01 60;
+    
+    /* Elevated Cards - Slightly Lighter Black */
+    --card: 0.14 0.01 35;
+    --card-foreground: 0.95 0.01 60;
+    
+    /* Popovers - Rich Black */
+    --popover: 0.18 0.012 35;
+    --popover-foreground: 0.95 0.01 60;
+    
+    /* Primary - Champagne Gold */
+    --primary: 0.78 0.095 75;
+    --primary-foreground: 0.08 0.008 30;
+    
+    /* Secondary - Subtle Gold */
+    --secondary: 0.65 0.08 70;
+    --secondary-foreground: 0.95 0.01 60;
+    
+    /* Muted - Dark Warm Grey */
+    --muted: 0.22 0.012 38;
+    --muted-foreground: 0.62 0.015 55;
+    
+    /* Accent - Vibrant Gold */
+    --accent: 0.72 0.12 70;
+    --accent-foreground: 0.08 0.008 30;
+    
+    /* Destructive - Soft Red */
+    --destructive: 0.55 0.18 28;
+    --destructive-foreground: 0.95 0.01 60;
+    
+    /* Borders - Subtle Gold Tint */
+    --border: 0.28 0.015 45;
+    --input: 0.28 0.015 45;
+    --ring: 0.78 0.095 75;
+    
+    /* Charts - Dark Luxury Palette */
+    --chart-1: 0.78 0.095 75;
+    --chart-2: 0.65 0.08 70;
+    --chart-3: 0.52 0.12 50;
+    --chart-4: 0.85 0.08 65;
+    --chart-5: 0.72 0.15 60;
+    
+    /* Sidebar - Deep Black */
+    --sidebar: 0.1 0.008 32;
+    --sidebar-foreground: 0.95 0.01 60;
+    --sidebar-primary: 0.78 0.095 75;
+    --sidebar-primary-foreground: 0.08 0.008 30;
+    --sidebar-accent: 0.18 0.012 35;
+    --sidebar-accent-foreground: 0.95 0.01 60;
+    --sidebar-border: 0.28 0.015 45;
+    --sidebar-ring: 0.78 0.095 75;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  html {
+    color-scheme: light dark;
+  }
+}
+
+@layer utilities {
+  .font-serif-luxury {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Luxury easing curve - slower, more elegant */
+  .gold-glow {
+    transition: box-shadow 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  .gold-glow:hover {
+    box-shadow: 0 0 40px 8px oklch(0.72 0.12 70 / 0.35), 0 0 80px 15px oklch(0.72 0.12 70 / 0.18);
+    transform: translateY(-4px);
+  }
+  
+  .luxury-transition {
+    transition: all 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  /* Staggered entrance animations for collections */
+  @keyframes luxury-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-luxury-entrance {
+    animation: luxury-fade-up 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+  }
+  
+  .animate-luxury-entrance-delay-1 {
+    animation: luxury-fade-up 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0.15s both;
+  }
+  
+  .animate-luxury-entrance-delay-2 {
+    animation: luxury-fade-up 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s both;
+  }
+  
+  .animate-luxury-entrance-delay-3 {
+    animation: luxury-fade-up 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0.45s both;
+  }
+}
